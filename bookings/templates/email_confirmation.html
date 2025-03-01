@@ -1,0 +1,13 @@
+<p>Hello, <strong>{{ user.username }}</strong></p>
+
+<p>You're receiving this email because user <strong>{{ user.username }}</strong> used your email address to register an account on <strong>TEFT</strong> (127.0.0.1:8000).</p>
+
+<p>To confirm your email address and activate your account, please click the link below:</p>
+
+<p><a href="{{ activate_url }}">Confirm Your Email</a></p>
+
+<p>If you didn't make this request, please ignore this email.</p>
+
+<p>Thank you for choosing <strong>TEFT</strong>!</p>
+
+<p>Best regards,<br>The TEFT Team</p>

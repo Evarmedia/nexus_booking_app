@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Slot</title>
+</head>
+<body>
+    <h2>Edit Slot</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Slot</button>
+    </form>
+    <a href="{% url 'available_slots' %}">Cancel</a>
+</body>
+</html>

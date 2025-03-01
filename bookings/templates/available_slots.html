@@ -1,0 +1,37 @@
+{% block content %}
+<h2>Available Slots</h2>
+
+{% if slots %}
+<table border="1">
+    <thead>
+        <tr>
+            <th>Hairstylist</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Availability</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for slot in slots %}
+        <tr>
+            <td>{{ slot.hairstylist.name }}</td>
+            <td>{{ slot.start_time }}</td>
+            <td>{{ slot.end_time }}</td>
+            <td>{% if slot.available %} ✅ Available {% else %} ❌ Booked {% endif %}</td>
+            <td>
+                {% if slot.available %}
+                <a href="{% url 'create_booking' slot.id %}" class="btn btn-success">Book Now</a>
+                {% else %}
+                <span class="text-danger">Not Available</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No available slots at the moment.</p>
+{% endif %}
+
+{% endblock %}

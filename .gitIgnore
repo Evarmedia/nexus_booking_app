@@ -1,0 +1,60 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Django-related
+db.sqlite3
+db.sqlite3-journal
+/media/
+*.log
+
+# Ignore sensitive files
+.env
+*.secret
+config/settings/local.py  # If you have environment-specific settings
+
+# Static and media files
+/static/
+*/staticfiles/
+*/media/
+
+# VSCode and PyCharm
+.vscode/
+.idea/
+
+# MacOS
+.DS_Store
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+.cache
+nosetests.xml
+coverage.xml
+*.mo
+*.pot
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Migrations (optional: exclude auto-generated migrations)
+**/migrations/*.pyc
+**/migrations/*.pyo
+**/migrations/__pycache__/
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+
+
