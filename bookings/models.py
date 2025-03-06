@@ -4,10 +4,10 @@ from django.utils import timezone
 
 
 class Hairstylist(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)  
     name = models.CharField(max_length=100)
     description = models.TextField()
     requires_password_reset = models.BooleanField(default=True)
+    email = models.EmailField(unique=True, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -46,9 +46,7 @@ class Booking(models.Model):
             fail_silently=False,
         )
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    slot = models.ForeignKey(Slot, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)  
+  
 
     def __str__(self):
         return f"Booking for {self.user.username} on {self.slot.start_time}"
